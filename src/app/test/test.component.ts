@@ -15,7 +15,7 @@ export class TestComponent implements OnInit {
 
 	toggleSalon() {
 		
-		return this.http.post('http://localhost:3000/light/toggle', {}).subscribe((response) => {
+		return this.http.post('http://192.168.0.24:3000/light/toggle', {}).subscribe((response) => {
 			console.log(response);
 		},
 		(error) => {
