@@ -45,3 +45,9 @@ typings/
 
 # next.js build output
 .next
+
+
+# perso
+.DS_Store
+e2e/
+
