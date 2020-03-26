@@ -1,3 +1,23 @@
-<p>
-	<button (click)="toggleSalon()">Toggle salon</button>
-</p>
+<div class="container py-5">
+	
+	<h2>Lumière salon</h2>
+
+	<button (click)="toggleSalon()">Toggle</button>
+
+	<div class="py-5">
+		<h3>Brightness :</h3>
+		<input #brightness type="range" min="1" max="99" value="{{brightness}}" name="" (change)="changeBrightness(brightness.value)">
+	</div>
+
+	<div>
+		<h3>Color :</h3>
+		
+		<label>red :</label><input #red type="range" min="1" max="255" value="{{color.red}}" name="" (change)="changeColor(red.value, green.value, blue.value)">{{ red.value }}<br/>
+
+		
+		<label>green :</label><input #green type="range" min="1" max="255" value="{{color.green}}" name="" (change)="changeColor(red.value, green.value, blue.value)">{{ green.value }}<br/>
+		
+		<label>blue :</label><input #blue type="range" min="1" max="255" value="{{color.blue}}" name="" (change)="changeColor(red.value, green.value, blue.value)">{{ blue.value }}
+	</div>
+
+</div>
