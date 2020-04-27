@@ -1,8 +1,8 @@
 export class Device {
-	id: int;
-	uid: int;
+	id: number;
+	uid: number;
 	type: string;
 	name: string;
 	ip: string;
-	port: int;
+	port: number;
 }
