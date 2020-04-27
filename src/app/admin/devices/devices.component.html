@@ -1,0 +1,53 @@
+
+<!-- {{ Devices | json }} -->
+<!-- 
+<div class="card-header">
+	<h4 class="card-title">Devices</h4>
+</div> -->
+
+<div class="card-body">
+	<div class="table-responsive">
+
+		<table class="table">
+
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>UID</th>
+					<th>Type</th>
+					<th>IP</th>
+					<th>Port</th>
+					<th class="text-right">Actions</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr *ngFor="let device of Devices">
+					<td>{{ device.device_name }}</td>
+					<td>{{ device.device_uid }}</td>
+					<td>{{ device.device_type }}</td>
+					<td>{{ device.device_ip }}</td>
+					<td>{{ device.device_port }}</td>
+					<td class="text-right">
+						<button type="button" rel="tooltip" class="btn btn-round btn-success btn-icon btn-sm">
+							<i class="fa fa-edit"></i>
+						</button>
+						<button type="button" rel="tooltip" class="btn btn-round btn-danger btn-icon btn-sm">
+							<i class="fa fa-times"></i>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+
+		</table>
+
+	</div>
+</div>
+
+
+<div class="card-footer">
+	<hr>
+	<div class="stats">
+		<i class="fa fa-history"></i> Updated 3 minutes ago
+	</div>
+</div>
