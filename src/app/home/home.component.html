@@ -1,25 +1,71 @@
-<div class="container py-5">
-	
-	<h2>Lumière salon</h2>
+<div class="home">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <!-- <a class="navbar-brand" href="#">Navbar</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
 
-	<button (click)="toggleSalon()">Toggle</button>
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">Link</a>
+	      </li>
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Dropdown
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	          <a class="dropdown-item" href="#">Action</a>
+	          <a class="dropdown-item" href="#">Another action</a>
+	          <div class="dropdown-divider"></div>
+	          <a class="dropdown-item" href="#">Something else here</a>
+	        </div>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link disabled" href="#">Disabled</a>
+	      </li>
+	    </ul>
+	    <form class="form-inline my-2 my-lg-0">
+	      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+	      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	    </form>
+	  </div> -->
+		<!-- <a routerLink="/admin">Admin</a> -->
 
-	<div class="py-5">
-		<h3>Brightness :</h3>
-		<input #brightness type="range" min="1" max="99" value="{{brightness}}" name="" (change)="changeBrightness(brightness.value)">
+		<a routerLink="/admin" class="nav-link">
+			<i class="nc-icon nc-settings-gear-65"></i>
+		</a>
+	</nav>
+
+	<div class="container py-5">
+		
+		<div class="card">
+			<h2>Lumière salon</h2>
+
+			<button (click)="toggleSalon()">Toggle</button>
+
+			<div class="py-5">
+				<h3>Brightness :</h3>
+				<input #brightness type="range" min="1" max="99" value="{{brightness}}" name="" (change)="changeBrightness(brightness.value)">
+			</div>
+
+			<div>
+				<h3>Color :</h3>
+				
+				<label>red :</label><input #red type="range" min="1" max="255" value="{{color.red}}" name="" (change)="changeColor(red.value, green.value, blue.value)">{{ red.value }}<br/>
+
+				
+				<label>green :</label><input #green type="range" min="1" max="255" value="{{color.green}}" name="" (change)="changeColor(red.value, green.value, blue.value)">{{ green.value }}<br/>
+				
+				<label>blue :</label><input #blue type="range" min="1" max="255" value="{{color.blue}}" name="" (change)="changeColor(red.value, green.value, blue.value)">{{ blue.value }}
+			</div>
+		</div>
+
+		<a routerLink="/admin">Admin</a>
+
 	</div>
-
-	<div>
-		<h3>Color :</h3>
-		
-		<label>red :</label><input #red type="range" min="1" max="255" value="{{color.red}}" name="" (change)="changeColor(red.value, green.value, blue.value)">{{ red.value }}<br/>
-
-		
-		<label>green :</label><input #green type="range" min="1" max="255" value="{{color.green}}" name="" (change)="changeColor(red.value, green.value, blue.value)">{{ green.value }}<br/>
-		
-		<label>blue :</label><input #blue type="range" min="1" max="255" value="{{color.blue}}" name="" (change)="changeColor(red.value, green.value, blue.value)">{{ blue.value }}
-	</div>
-
-	<a routerLink="/admin">Admin</a>
 
 </div>
