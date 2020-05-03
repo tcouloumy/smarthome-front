@@ -4,7 +4,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
 	selector: 'app-root',
 	templateUrl: './app.component.html',
 	styleUrls: [
-		'../assets/css/bootstrap.min.css',
 		'../assets/scss/paper-dashboard.scss',
 		'./app.component.scss'
 	],

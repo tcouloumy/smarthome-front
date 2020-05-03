@@ -1,30 +1,41 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 
 import { AdminModule } from './admin/admin.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
-const appRoutes: Routes = [
-	{ path: '', component: HomeComponent }
+const appRoutes: Routes = [{ 
+		path: '',
+		component: HomeComponent
+	}, { 
+		path: 'login',
+		component: LoginComponent
+	}
 ];
 
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		HomeComponent
+		HomeComponent,
+		LoginComponent
 	],
 	imports: [
 		BrowserModule,
 		HttpClientModule,
 		AdminModule,
-		RouterModule.forRoot(appRoutes)
+		RouterModule.forRoot(appRoutes),
+		NgbModule,
+		ReactiveFormsModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

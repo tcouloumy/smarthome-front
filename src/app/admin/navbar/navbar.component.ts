@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'navbar',

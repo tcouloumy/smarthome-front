@@ -1,1 +1,7 @@
-<p>breadcrumb works!</p>
+<!-- <a  href="javascript:;">Paper Dashboard 2</a> -->
+
+<a class="navbar-brand" *ngFor="let breadcrumb of breadcrumbs">
+	{{ breadcrumb.label }}
+</a>
+
+<!-- {{ breadcrumbs | json }} -->

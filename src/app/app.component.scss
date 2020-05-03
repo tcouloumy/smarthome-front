@@ -1,10 +1,96 @@
 /* CSS Override */
 
 
-/*
-.table > thead > tr > th {
-    padding: 12px 7px;
-    vertical-align: middle;
-    text-transform: uppercase;
+/* General stying */
+body, html {
+  	height: 100%;
+	min-height: 100%;
+}
+
+.bg-container{
+    position: fixed;
+    width: 100%;          /* this is an example */
+    height: 100%;         /* this is an example */
+    overflow: hidden;
+}
+
+.bg-image {
+	background-image: url('../assets/img/background.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	position: absolute;
+	left:-15px;
+    right:-15px;
+    top:-15px;
+    bottom:-15px;
+    filter: blur(8px);
+}
+
+.bg-overlay {
+	position: absolute;
+	left: -15px;
+    right: -15px;
+    top: -15px;
+    bottom: -15px;
+    
+    background-color: rgba(0, 0, 0, .35);
+}
+
+app-root {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+/*app-root {
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+}*/
+
+/* Buttons */
+/*button.btn.btn-xsm {
+	font-size: 10px;
+    padding: 4px 8px;
+    margin-top: 2px;
 }
 */
+
+/* Card header */
+.card {
+
+	&>div.card-header,
+	&>div.card-body,
+	&>div.card-footer {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	.card-header {
+	
+		.card-title {
+			display: inline-block;
+		}
+
+		button.btn {
+			float: right;
+		}
+	}
+}
+
+
+/* Tables */
+
+table.table {
+	td.actions-btns {
+		button.btn {
+			height: 24px;
+			min-width: 24px;
+			width: 24px;
+			margin-left: 8px;
+		}
+	}
+}
