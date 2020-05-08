@@ -15,11 +15,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes = [{ 
 		path: '',
-		component: HomeComponent
+		component: HomeComponent,
+		pathMatch: 'full'
 	}, { 
 		path: 'login',
 		component: LoginComponent
-	}
+	},
+	{ path: '**', redirectTo: '' }
 ];
 
 

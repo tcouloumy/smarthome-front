@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { AuthService } from '../shared/services/auth.service'
+
 
 @Component({
 	selector: 'app-test',
@@ -8,6 +10,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
 
+	currentUser: User;
+
 	brightness: number = 80;
 	color: object = {
 		r: 255,
@@ -15,10 +19,26 @@ export class HomeComponent implements OnInit {
 		b: 255
 	}
 
-	constructor(private http: HttpClient) {}
+	constructor(
+		private http: HttpClient,
+		private authService: AuthService
+	) {
+		this.authService.currentUser.subscribe(u => this.currentUser = u);
+	}
 
 	ngOnInit() {}
 
+	/* Auth functions */ 
+
+	// isLoggedIn() {
+	// 	return (this.authService.currentUserValue) ? true : false;
+	// }
+
+	logout() {
+		return this.authService.logout();
+	}
+
+	/* TODO : temporary */
 	toggleSalon() {
 		
 		return this.http.post('http://79.83.169.199:3000/light/1/toggle', {}).subscribe((response) => {

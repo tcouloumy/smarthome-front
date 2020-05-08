@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { AuthService } from '../shared/services/auth.service'
 
@@ -15,8 +16,13 @@ export class LoginComponent implements OnInit {
 
 	constructor(
 		private formBuilder: FormBuilder,
-		private authService: AuthService
-	) {}
+		private authService: AuthService,
+		private router: Router
+	) {
+        if (this.authService.currentUserValue) { 
+            this.router.navigate(['/']);
+        }
+	}
 
 	ngOnInit() {
 		this.loginForm = this.formBuilder.group({
@@ -35,8 +41,12 @@ export class LoginComponent implements OnInit {
 		}
 
 		this.authService.login(this.fields.username.value, this.fields.password.value).subscribe(data => {
-			// TODO
-			// this.router.navigate([this.returnUrl]);
+			if (this.returnUrl) {
+				this.router.navigate([this.returnUrl])
+			}
+			else {
+				this.router.navigate(['']);
+			}
 		},
 		error => {
 			// TODO
