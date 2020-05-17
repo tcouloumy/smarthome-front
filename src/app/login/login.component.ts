@@ -13,10 +13,12 @@ export class LoginComponent implements OnInit {
 	
 	loginForm: FormGroup;
 	submitted = false;
+	returnUrl: string;
 
 	constructor(
 		private formBuilder: FormBuilder,
 		private authService: AuthService,
+		private route: ActivatedRoute,
 		private router: Router
 	) {
         if (this.authService.currentUserValue) { 
@@ -29,6 +31,8 @@ export class LoginComponent implements OnInit {
 			username: ['', Validators.required],
 			password: ['', Validators.required]
 		});
+
+		this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
 	}
 
 	get fields() { return this.loginForm.controls; }
