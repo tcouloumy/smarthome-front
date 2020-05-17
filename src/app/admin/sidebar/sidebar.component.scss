@@ -1,3 +1,10 @@
 .sidebar[data-color="black"]:after, .off-canvas-sidebar[data-color="black"]:after {
 	background-color: #66615b;
 }
+
+
+.sidebar {
+	li {
+		outline: none;
+	}
+}

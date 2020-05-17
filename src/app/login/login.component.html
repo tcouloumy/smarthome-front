@@ -11,13 +11,17 @@
 			<div class="card-body ">
 				<div class="input-group" [ngClass]="{'has-danger': submitted && fields.username.errors }">
 					<div class="input-group-prepend">
-						<span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+						<span class="input-group-text">
+							<i class="fas fa-user"></i>
+						</span>
 					</div>
-					<input type="text" formControlName="username" class="form-control" placeholder="First Name...">
+					<input type="text" formControlName="username" class="form-control" placeholder="Name">
 				</div>
 				<div class="input-group">
 					<div class="input-group-prepend">
-						<span class="input-group-text"><i class="nc-icon nc-key-25"></i></span>
+						<span class="input-group-text">
+							<i class="fas fa-key"></i>
+						</span>
 					</div>
 					<input type="password" formControlName="password" placeholder="Password" class="form-control">
 				</div>
@@ -35,7 +39,7 @@
 
 			<div class="card-footer">
 				<button class="btn btn-warning btn-round btn-block mb-3">
-					Log in
+					Go !
 				</button>
 			</div>
 
