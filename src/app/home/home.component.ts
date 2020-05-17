@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthService } from '../shared/services/auth.service'
-import { User } from '../shared/models/'
+import { User } from '../shared/models/user'
 
 
 @Component({
