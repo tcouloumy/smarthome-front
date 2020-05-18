@@ -9,6 +9,7 @@ import { adminRoutesModule } from './admin.routes';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BreadcrumbComponent } from './navbar/breadcrumb/breadcrumb.component';
 import { NewDeviceComponent } from './devices/new-device/new-device.component';
+import { DiscoverComponent } from './devices/discover/discover.component';
 
 @NgModule({
 	declarations: [
@@ -17,7 +18,8 @@ import { NewDeviceComponent } from './devices/new-device/new-device.component';
 		DevicesComponent,
 		NavbarComponent,
 		BreadcrumbComponent,
-		NewDeviceComponent
+		NewDeviceComponent,
+		DiscoverComponent
 	],
 	imports: [
 		CommonModule,
